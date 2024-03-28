@@ -6,7 +6,7 @@
 ## 논문스터디 진행 방식
 
 - 매주 발표자가 돌아가며 발표 실시
-    - 민지 - 승범 - 주형 - 근태 - 주환 - 승주 - 은서
+    - [민지 승주] [승범 수현] [근태 주형] [주환 은서]
 
 - 제시된 논문
     - word2vec - sec2sec - sec2sec with attention - Transformer - GPT - BERT - T5 - ViT
@@ -23,14 +23,14 @@
 ## 커리큘럼
 |일 정|논 문|조|
 |--|--|--|
-|`3/25`|word2vec|민지|
-|`4/1`|sec2sec|승범|
-|`4/8`|sec2sec with attention|주형|
-|`4/15` |Transformer|근태|
-|`4/22`|GPT|주환|
-|`4/29`|BERT|승주|
-|`5/13`|T5|은서|
-|`5/20`|ViT|민지|
+|`3/25`|word2vec|민지 승주|
+|`4/1`|sec2sec|승범 수현|
+|`4/8`|sec2sec with attention|근태 주형|
+|`4/15` |Transformer|주환 은서|
+|`4/22`|GPT|민지 승주|
+|`4/29`|BERT|승범 수현|
+|`5/13`|T5|근태 주형|
+|`5/20`|ViT|주환 은서|
 
 <BR>
 
