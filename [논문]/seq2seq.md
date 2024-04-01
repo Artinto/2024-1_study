@@ -40,12 +40,12 @@
 
     - Word2Vec
         - CBOW: 주변 단어를 입력 받아 중심 단어 예측.
-        - Skip-gram: 중심 단어를 입력 받아 주변 단어 예측.
-
-        - 앞의 n개가 아니라 앞 뒤로 n개를 입력을 받고 ouput으로 예측.
-        - Input layer에서 Output layer로 정보가 한 방향으로 전파됨.
-        - 고정된 크기를 입력을 받고 출력으로 내보냄.
-        - 보통, RNN 혹은 LSTM에 넣기 전에 단어를 Embedding하는 모델로 사용.
+        - Skip-gram: 중심 단어를 입력 받아 주변 단어 예측.  
+            <img src= 'https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/word2vec.png?raw=true' width="450">   
+            - 앞의 n개가 아니라 앞 뒤로 n개를 입력을 받고 ouput으로 예측.
+            - Input layer에서 Output layer로 정보가 한 방향으로 전파됨.
+            - 고정된 크기를 입력을 받고 출력으로 내보냄.
+            - 보통, RNN 혹은 LSTM에 넣기 전에 단어를 Embedding하는 모델로 사용.
 
     - RNN(Recurrent Neural Network)      
         <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn.png?raw=true" width="400">    
