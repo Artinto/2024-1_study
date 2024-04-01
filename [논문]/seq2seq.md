@@ -32,7 +32,7 @@
     - NNLM(Neural Network Language Model)
         - 정해진 개수의 단어 만을 참고하여 다음 단어 예측.
         - window를 4라고 가정하면 will the fat cat을 이용해 sit을 예측.   
-        ![Untitled](./image/seq2seq/nnlm.png)  
+        <img src= 'https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/nnlm.png?raw=true' width="400">  
 
         [이미지출처](https://wikidocs.net/45609)
     - Input layer에서 Output layer로 정보가 한 방향으로 전파됨.
@@ -48,18 +48,18 @@
         - 보통, RNN 혹은 LSTM에 넣기 전에 단어를 Embedding하는 모델로 사용.
 
     - RNN(Recurrent Neural Network)      
-    <img src="./image/seq2seq/rnn.png" width="400">  
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn.png?raw=true" width="400">  
     [이미지출처](https://wikidocs.net/22886)
     
     - Feed Forward 방식이 아니라, 은닉층의 출력이 다시 은닉층의 입력으로 들어가는 재귀적인 연결이 특징.
     - 이를 통해 이전 시점의 정보를 현재 시점에서 활용할 수 있다.
     - RNN은 Sequence의 길이에 제한이 없어, 가변 길이의 Sequence를 처리할 수 있다.  
-        <img src="./image/seq2seq/rnn활용.png" width="400">  
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn활용.png?raw=true" width="400">  
 
         [이미지출처](https://blog.naver.com/PostView.nhn?blogId=winddori2002&logNo=221974391796)  
     
     - RNN 내부  
-    <img src="./image/seq2seq/rnn내부.png" width="300">  
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn내부.png?raw=true" width="300">  
 
     [이미지출처](https://wikidocs.net/22888)  
     - Hidden Layer : $h_t = tanh(W_xx_t + W_hh_{t-1} $
@@ -76,9 +76,9 @@
 - RNN이 이론적으로 long-term dependencies를 완전히 다룬다고 하지만 실제 문제에선 그렇지 않다. 이를 해결하기 위해 LSTM이 등장했다.
 - LSTM도 RNN의 한 종류다. 모든 RNN은 neural network 모듈을 반복 시키는 체인 구조로 반복되는 단순한 구조를 가지고 있다. LSTM도 같은 체인 구조를 가지는데, 단순한 neural network layer 한 층이 아닌 4개의 layer가 상호작용 한다.
 - 논문에서는 LSTM을 사용해 입력 문장을 고정 차원의 벡터 표현으로 매핑한다.  
-    <img src="./image/seq2seq/lstm model.png" width="400">     
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/lstm model.png?raw=true" width="400">     
 
-    <img src="./image/seq2seq/lstm 설명.png" width="400">  
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/lstm 설명.png?raw=true" width="400">  
 
     [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
     
@@ -88,7 +88,7 @@
     - 크게 main Flow, forget gate, input gate, output gate로 나눌 수 있음.
 
 - Main Flow  
-    <img src="./image/seq2seq/mainflow.png" width="280">  
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/mainflow.png?raw=true" width="280">  
 
     - cell state
         - 이전 상태에서 현재 상태까지 유지되는 정보의 흐름을 나타냄.
@@ -97,7 +97,7 @@
         - output gate로 현재 cell state 정보를 전달함
     
 - Forget gate(망각 게이트)  
-    <img src="./image/seq2seq/forget gate.png" width="480">  
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/forget gate.png?raw=true" width="480">  
 
     [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
     - 이전 cell state의 정보를 버릴지 정한다.
@@ -112,7 +112,7 @@
         4. (3) 이전 cell state에 곱해 이전 cell state를 얼마나 기억할 지 정함.
     
 - Input gate(입력 게이트)  
-    <img src="./image/seq2seq/input gate.png" width="480">   
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/input gate.png?raw=true" width="480">   
      
     [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
     
@@ -124,13 +124,15 @@
         3. sigmoid의 layer의 결과와 tanh의 layer의 결과를 곱함.
         4. 3번의 결과를 forget gate를 거친 현재 cell state 값에 더함.  
 
-    <img src="./image/seq2seq/sigmoid vs tanh.png" width="480">    
+    - Sigmoid layer vs Tanh layer  
+     <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/sigmoid vs tanh.png?raw=true" width="480">    
 
-    - Sigmoid layer vs Tanh layer
         - Tanh layer는 현재 시점의 정보를 압축하여 -1 ~ 1 사이의 값을 가지는 벡터로 변환.
         - Sigmoid layer는 cell state에 현재 시점의 정보를 얼마나 반영하는지 결정.
+
+    
     - 최종적으로 현재 시점의 Cell state : $C_t =f_t * C_t-1 + i_t * C̃_t$ 가 된다.  
-        <img src="./image/seq2seq/lstm 최종.png" width="450">   
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/lstm 최종.png?raw=true"  width="450">   
 
         [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
         
@@ -192,7 +194,7 @@
     [출처](https://a-i-dan.github.io/math_nn)
 
     - output gate(출력 게이트)  
-        <img src="./image/seq2seq/output gate.png" width="480">   
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/output gate.png?raw=true"  width="480">   
 
         [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)   
         - output은 위에서 계산된 cell state의 tanh를 적용한 값을 사용한다.
@@ -201,23 +203,23 @@
 
 ## Seq2Seq Architecture
 
-<img src="./image/seq2seq/seq2seq archi.png" width="480">   
+<img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/seq2seq archi.png?raw=true" width="480">   
 
 - Seq2Seq의 구조는 Encoder / Decoder의 구조를 가진다.
 - Sequence를 원하는 Sequence로 변환하는 작업.
 
 - Encoder / Decoder  
-    <img src="./image/seq2seq/seq2seq archi2.png" width="480">    
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/seq2seq archi2.png?raw=true" width="480">    
     [이미지출처](https://www.oreilly.com/library/view/hands-on-natural-language/9781789139495/7d9f1317-d2e0-46ea-b8f0-28d7b42ecabf.xhtml)  
 
     - Encoder  
-        <img src="./image/seq2seq/encoder.png" width="480">   
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/encoder.png?raw=true" width="480">   
         
         - 데이터를 입력 받아 하나의 벡터로 정보 압축.
         - RNN, LSTM, GRU의 등의 순환 신경망 구조를 사용해 입력된 Sequence를 고정된 벡터로 변환하는 역활 수행.
 
     - Decoder  
-        <img src="./image/seq2seq/decoder.png" width="480">   
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/decoder.png?raw=true" width="480">   
 
         - 압축된 데이터를 기반으로 변환.
         - 순환 신경망 구조를 사용해 출력 Sequence를 생성한다.
@@ -226,7 +228,7 @@
 - Model 구조
 
     - 인코더/디코더에 더 자세한 구조  
-    <img src="./image/seq2seq/seq2seq detail.png" width="700">   
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/seq2seq detail.png?raw=true" width="700">   
 
     [이미지출처](https://heekangpark.github.io/nlp/attention)   
         - 이렇게 seq2seq는 인코더와 디코더로 구성된 것이 특징이다. 이 각각의 **인코더/디코더는 4개의 LSTM layer**로 구성되어 있다.
