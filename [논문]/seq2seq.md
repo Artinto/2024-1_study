@@ -228,9 +228,10 @@
 - Model 구조
 
     - 인코더/디코더에 더 자세한 구조  
-    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/seq2seq detail.png?raw=true" width="700">   
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/seq2seq detail.png?raw=true" width="700">   
 
-    [이미지출처](https://heekangpark.github.io/nlp/attention)   
+        [이미지출처](https://heekangpark.github.io/nlp/attention)   
+
         - 이렇게 seq2seq는 인코더와 디코더로 구성된 것이 특징이다. 이 각각의 **인코더/디코더는 4개의 LSTM layer**로 구성되어 있다.
         - 인코더는 입력 문장인 'I am a student’를 받아 **context 벡터(고정된 크기)**를 만든다.
         - context 벡터는 다시 디코더로 전달되어 'je suis étudiant’ 라는 프랑스어 문장을 만들어내고 있다.
@@ -246,12 +247,12 @@
     - 가장 빈번한 16만개의 source language와 8만개의 target language는 단어 사전으로 구성하고 그 외 나머지 단어들은 “unknown” token으로 둔다.
 
 - Decoding and Rescoring  
-    <img src="./image/seq2seq/decoding_expression.png" width="300">   
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/decoding_expression.png?raw=true" width="300">   
 
     - T : 올바른 번역 , S : 훈련 source 문장
     - log 확률을 최대화 하도록 학습 시킨다.
     
-    <img src="./image/seq2seq/decoding_expression2.png" width="300">  
+    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/decoding_expression2.png?raw=true" width="300">  
     
     - n-best list의 점수를 rescore하기 위해 모든 hypothesis의 로그 확률을 LSTM으로 계산했고, 그 값들과 LSTM score의 짝수 평균을 취해줬다.
 
@@ -260,7 +261,7 @@
     - Decoding 방식
 
         - Greedy Decoding  
-            <img src="./image/seq2seq/greedy_decoding.png" width="400">       
+            <img src= "https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/greedy decoding.png?raw=true" width="400">       
 
             [이미지출처](https://blog.naver.com/sooftware/221809101199) 
             
@@ -271,7 +272,7 @@
         - Beam Search
             - Greedy Searchs는 확률이 0.5, 0.49여도 0.49에 대한 반영 없이 무조건 0.5만 고려.
             - 비교적 모든 경우의 수를 고려하려고 해서 나온 방식.  
-                <img src="./image/seq2seq/beam_search1.png" width="300">   
+                <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/beam_search1.png?raw=true" width="300">   
 
                 [이미지출처](https://blog.naver.com/sooftware/221809101199) 
                 
@@ -281,7 +282,7 @@
                 4. 문장의 끝이 나올때까지 2번과 3번 반복
 
             - 최종 모습  
-                <img src="./image/seq2seq/beam_search2.png" width="600">    
+                <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/beam_search2.png?raw=true" width="600">    
 
                 [이미지출처](https://blog.naver.com/sooftware/221809101199)  
                 - 후보군
@@ -291,8 +292,8 @@
                     - 위의 3가지 중 가장 누적으로 확률이 좋은 빔을 선택.
 
             - 결과 비교  
-                <img src="./image/seq2seq/greedy vs beam.png" width="450">    
-
+                <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/greedy vs beam.png?raw=true"  width="450">    
+                
                 [이미지출처](https://blog.naver.com/sooftware/221809101199)
                 
     - Rescoring(재채점) :
