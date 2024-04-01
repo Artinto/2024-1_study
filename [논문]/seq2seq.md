@@ -32,11 +32,11 @@
     - NNLM(Neural Network Language Model)
         - 정해진 개수의 단어 만을 참고하여 다음 단어 예측.
         - window를 4라고 가정하면 will the fat cat을 이용해 sit을 예측.   
-        <img src= 'https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/nnlm.png?raw=true' width="400">  
+            <img src= 'https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/nnlm.png?raw=true' width="400">   
 
-        [이미지출처](https://wikidocs.net/45609)
-    - Input layer에서 Output layer로 정보가 한 방향으로 전파됨.
-    - 고정된 길이라는 것이 한계
+            [이미지출처](https://wikidocs.net/45609)  
+        - Input layer에서 Output layer로 정보가 한 방향으로 전파됨.
+        - 고정된 길이라는 것이 한계
 
     - Word2Vec
         - CBOW: 주변 단어를 입력 받아 중심 단어 예측.
@@ -48,23 +48,25 @@
         - 보통, RNN 혹은 LSTM에 넣기 전에 단어를 Embedding하는 모델로 사용.
 
     - RNN(Recurrent Neural Network)      
-    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn.png?raw=true" width="400">  
-    [이미지출처](https://wikidocs.net/22886)
-    
-    - Feed Forward 방식이 아니라, 은닉층의 출력이 다시 은닉층의 입력으로 들어가는 재귀적인 연결이 특징.
-    - 이를 통해 이전 시점의 정보를 현재 시점에서 활용할 수 있다.
-    - RNN은 Sequence의 길이에 제한이 없어, 가변 길이의 Sequence를 처리할 수 있다.  
-        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn활용.png?raw=true" width="400">  
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn.png?raw=true" width="400">    
+        
+        [이미지출처](https://wikidocs.net/22886)
+        
+        - Feed Forward 방식이 아니라, 은닉층의 출력이 다시 은닉층의 입력으로 들어가는 재귀적인 연결이 특징.
+        - 이를 통해 이전 시점의 정보를 현재 시점에서 활용할 수 있다.
+        - RNN은 Sequence의 길이에 제한이 없어, 가변 길이의 Sequence를 처리할 수 있다.  
+            <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn활용.png?raw=true" width="400">  
 
-        [이미지출처](https://blog.naver.com/PostView.nhn?blogId=winddori2002&logNo=221974391796)  
+            [이미지출처](https://blog.naver.com/PostView.nhn?blogId=winddori2002&logNo=221974391796)  
     
     - RNN 내부  
-    <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn내부.png?raw=true" width="300">  
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/rnn내부.png?raw=true" width="300">  
 
-    [이미지출처](https://wikidocs.net/22888)  
-    - Hidden Layer : $h_t = tanh(W_xx_t + W_hh_{t-1} $
-    - Output Layer : $y_t = f(W_yh_t +b)$
-        - f는 Non-linear 활성화 함수 중 하나.(Sigmoid, Relu, Tanh)
+        [이미지출처](https://wikidocs.net/22888)  
+        - Hidden Layer : $h_t = tanh(W_xx_t + W_hh_{t-1} $
+        - Output Layer : $y_t = f(W_yh_t +b)$
+            - f는 Non-linear 활성화 함수 중 하나.(Sigmoid, Relu, Tanh)
+    
     - RNN 한계
         - 장기 의존성 문제(the problem of Long-Term Dependencies)
         - Backpropation Through Time(BPTT)를 통한 역전파로 인한 Gradient Vanishing 문제.
@@ -293,7 +295,7 @@
 
             - 결과 비교  
                 <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/greedy vs beam.png?raw=true"  width="450">    
-                
+
                 [이미지출처](https://blog.naver.com/sooftware/221809101199)
                 
     - Rescoring(재채점) :
