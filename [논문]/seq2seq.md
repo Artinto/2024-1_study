@@ -238,9 +238,9 @@
         - 인코더는 입력 문장인 'I am a student’를 받아 **context 벡터(고정된 크기)**를 만든다.
         - context 벡터는 다시 디코더로 전달되어 'je suis étudiant’ 라는 프랑스어 문장을 만들어내고 있다.
         - context 벡터에는 문장 정보가 압축되어 있고 인코더의 마지막 LSTM의 출력.
-        - 그림에서 <sos>는 문장의 시작, <eos>는 문장의 끝을 뜻하며 인코더로부터 전달 받은 context 벡터와<sos>가 입력되면 출력 될 확률이 가장 높은 단어인 ‘je’를 예측한다
+        - 그림에서 <sos>는 문장의 시작, <eos>는 문장의 끝을 뜻하며 인코더로부터 전달 받은 context 벡터와 sos가 입력되면 출력 될 확률이 가장 높은 단어인 ‘je’를 예측한다
         - 다음 스텝에서는 이전 스텝의 예측값인 ‘je’를 입력하고 다음으로 등장할 확률이 높은 ‘suis’를 출력한다.
-        - Input과 Output은 <eos>의 등장 시기에 따라 크기가 달라진다. 즉 문장의 최대 길이를 기준으로 zero padding 진행.
+        - Input과 Output은 eos의 등장 시기에 따라 크기가 달라진다. 즉 문장의 최대 길이를 기준으로 zero padding 진행.
 
 ## EXPERIMENTS
 - Dataset
