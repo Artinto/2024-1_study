@@ -31,8 +31,9 @@
 - 피드 포워드 신경망(Feed-forward Neural Network)
     - NNLM(Neural Network Language Model)
         - 정해진 개수의 단어 만을 참고하여 다음 단어 예측.
-        - window를 4라고 가정하면 will the fat cat을 이용해 sit을 예측.  
+        - window를 4라고 가정하면 will the fat cat을 이용해 sit을 예측.   
         ![Untitled](./image/seq2seq/nnlm.png)  
+
         [이미지출처](https://wikidocs.net/45609)
     - Input layer에서 Output layer로 정보가 한 방향으로 전파됨.
     - 고정된 길이라는 것이 한계
@@ -54,10 +55,12 @@
     - 이를 통해 이전 시점의 정보를 현재 시점에서 활용할 수 있다.
     - RNN은 Sequence의 길이에 제한이 없어, 가변 길이의 Sequence를 처리할 수 있다.  
         <img src="./image/seq2seq/rnn활용.png" width="400">  
+
         [이미지출처](https://blog.naver.com/PostView.nhn?blogId=winddori2002&logNo=221974391796)  
     
     - RNN 내부  
     <img src="./image/seq2seq/rnn내부.png" width="300">  
+
     [이미지출처](https://wikidocs.net/22888)  
     - Hidden Layer : $h_t = tanh(W_xx_t + W_hh_{t-1} $
     - Output Layer : $y_t = f(W_yh_t +b)$
@@ -74,7 +77,9 @@
 - LSTM도 RNN의 한 종류다. 모든 RNN은 neural network 모듈을 반복 시키는 체인 구조로 반복되는 단순한 구조를 가지고 있다. LSTM도 같은 체인 구조를 가지는데, 단순한 neural network layer 한 층이 아닌 4개의 layer가 상호작용 한다.
 - 논문에서는 LSTM을 사용해 입력 문장을 고정 차원의 벡터 표현으로 매핑한다.  
     <img src="./image/seq2seq/lstm model.png" width="400">     
+
     <img src="./image/seq2seq/lstm 설명.png" width="400">  
+
     [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
     
     - 각 선은 한 노드의 output을 다른 노드의 input으로 벡터 전체를 보내는 흐름
@@ -84,6 +89,7 @@
 
 - Main Flow  
     <img src="./image/seq2seq/mainflow.png" width="280">  
+
     - cell state
         - 이전 상태에서 현재 상태까지 유지되는 정보의 흐름을 나타냄.
     - Gate
@@ -92,6 +98,7 @@
     
 - Forget gate(망각 게이트)  
     <img src="./image/seq2seq/forget gate.png" width="480">  
+
     [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
     - 이전 cell state의 정보를 버릴지 정한다.
     - Sigmoid layer에 의해 결정되며 0이면 **모든 정보 폐기**, 1이면 **모든 정보 보전**으로 동작.
@@ -105,7 +112,8 @@
         4. (3) 이전 cell state에 곱해 이전 cell state를 얼마나 기억할 지 정함.
     
 - Input gate(입력 게이트)  
-    <img src="./image/seq2seq/input gate.png" width="480">  
+    <img src="./image/seq2seq/input gate.png" width="480">   
+     
     [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
     
     - **새로운 정보 중 어떤 것을 cell state에 저장할 것인지** 정하는 단계.
@@ -181,27 +189,30 @@
     
     plt.show()
     ```
-    
     [출처](https://a-i-dan.github.io/math_nn)
+
     - output gate(출력 게이트)  
         <img src="./image/seq2seq/output gate.png" width="480">   
 
-        [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
+        [이미지출처](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)   
         - output은 위에서 계산된 cell state의 tanh를 적용한 값을 사용한다.
         - sigmoid layer를 통해 출력을 조절한 뒤 현재 셀의 출력과 다음 층의 입력으로 사용함.
             - 우리가 보내고자 하는 output만 보낼 수 있게 된다.
 
 ## Seq2Seq Architecture
+
 <img src="./image/seq2seq/seq2seq archi.png" width="480">   
 
 - Seq2Seq의 구조는 Encoder / Decoder의 구조를 가진다.
+- Sequence를 원하는 Sequence로 변환하는 작업.
+
 - Encoder / Decoder  
-<img src="./image/seq2seq/seq2seq archi2.png" width="480">   
-[이미지출처](https://www.oreilly.com/library/view/hands-on-natural-language/9781789139495/7d9f1317-d2e0-46ea-b8f0-28d7b42ecabf.xhtml)  
-    - Sequence를 원하는 Sequence로 변환하는 작업.
+    <img src="./image/seq2seq/seq2seq archi2.png" width="480">    
+    [이미지출처](https://www.oreilly.com/library/view/hands-on-natural-language/9781789139495/7d9f1317-d2e0-46ea-b8f0-28d7b42ecabf.xhtml)  
+
     - Encoder  
-    <img src="./image/seq2seq/encoder.png" width="480">   
-    
+        <img src="./image/seq2seq/encoder.png" width="480">   
+        
         - 데이터를 입력 받아 하나의 벡터로 정보 압축.
         - RNN, LSTM, GRU의 등의 순환 신경망 구조를 사용해 입력된 Sequence를 고정된 벡터로 변환하는 역활 수행.
 
@@ -216,7 +227,8 @@
 
     - 인코더/디코더에 더 자세한 구조  
     <img src="./image/seq2seq/seq2seq detail.png" width="700">   
-    [이미지출처](https://heekangpark.github.io/nlp/attention)  
+
+    [이미지출처](https://heekangpark.github.io/nlp/attention)   
         - 이렇게 seq2seq는 인코더와 디코더로 구성된 것이 특징이다. 이 각각의 **인코더/디코더는 4개의 LSTM layer**로 구성되어 있다.
         - 인코더는 입력 문장인 'I am a student’를 받아 **context 벡터(고정된 크기)**를 만든다.
         - context 벡터는 다시 디코더로 전달되어 'je suis étudiant’ 라는 프랑스어 문장을 만들어내고 있다.
@@ -238,7 +250,7 @@
     - log 확률을 최대화 하도록 학습 시킨다.
     
     <img src="./image/seq2seq/decoding_expression2.png" width="300">  
-
+    
     - n-best list의 점수를 rescore하기 위해 모든 hypothesis의 로그 확률을 LSTM으로 계산했고, 그 값들과 LSTM score의 짝수 평균을 취해줬다.
 
     <br>
@@ -247,6 +259,7 @@
 
         - Greedy Decoding  
             <img src="./image/seq2seq/greedy_decoding.png" width="400">       
+
             [이미지출처](https://blog.naver.com/sooftware/221809101199) 
             
             - 각 타임스텝(timestep)에서 가장 확률이 높은 후보를 선택.
@@ -257,6 +270,7 @@
             - Greedy Searchs는 확률이 0.5, 0.49여도 0.49에 대한 반영 없이 무조건 0.5만 고려.
             - 비교적 모든 경우의 수를 고려하려고 해서 나온 방식.  
                 <img src="./image/seq2seq/beam_search1.png" width="300">   
+
                 [이미지출처](https://blog.naver.com/sooftware/221809101199) 
                 
                 1. 토큰이 입력되면 B개 만큼 선택(여기선 B=3)
@@ -266,6 +280,7 @@
 
             - 최종 모습  
                 <img src="./image/seq2seq/beam_search2.png" width="600">    
+
                 [이미지출처](https://blog.naver.com/sooftware/221809101199)  
                 - 후보군
                     - The dog Barked loudly
@@ -275,6 +290,7 @@
 
             - 결과 비교  
                 <img src="./image/seq2seq/greedy vs beam.png" width="450">    
+
                 [이미지출처](https://blog.naver.com/sooftware/221809101199)
                 
     - Rescoring(재채점) :
@@ -295,6 +311,7 @@
 - **reversed order Input sequence**
     - input sequence 순서를 바꾸면 dataset의 많은 short term dependencies가 도입되기 때문에 gradient의 전파가 원활해진다.  
     <img src="./image/seq2seq/reverse order input.png" width="350">   
+
         - reverse하여 입력 시킨 sequence를 예를 들었을 때, 이와 같이 “나”라는 단어가 “I”까지 가는 것보다 아래 처럼 reverse 상태에서 가는 것이 gradient 전파가 더 잘 될 것이다.
         - 평균 길이는 같지만, 앞 쪽 데이터에 대한 정확한 예측이 선행된다면, 뒤의 예측도 좋은 결과를 낼 수 있기 때문이다.
 
@@ -312,10 +329,11 @@
 - 실제로 나왔던 결과  
     * 학습 결과  
     <img src="./image/seq2seq/result1.png" width="600">   
+
         - reverse - beam size 12 : BLEU **34.81**
         - baseline system : BLEU **33.30**
         - forward - beam size 12 : BLEU **26.17**
-        
+
     * 실제 추론  
     <img src="./image/seq2seq/result2.png" width="600">   
 
