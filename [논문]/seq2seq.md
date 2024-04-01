@@ -126,8 +126,8 @@
         3. sigmoid의 layer의 결과와 tanh의 layer의 결과를 곱함.
         4. 3번의 결과를 forget gate를 거친 현재 cell state 값에 더함.  
 
-    - Sigmoid layer vs Tanh layer  
-     <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/sigmoid vs tanh.png?raw=true" width="480">    
+    - Sigmoid layer vs Tanh layer   
+        <img src="https://github.com/Artinto/2024-1_study/blob/main/%5B%EB%85%BC%EB%AC%B8%5D/image/seq2seq/sigmoid vs tanh.png?raw=true" width="480">    
 
         - Tanh layer는 현재 시점의 정보를 압축하여 -1 ~ 1 사이의 값을 가지는 벡터로 변환.
         - Sigmoid layer는 cell state에 현재 시점의 정보를 얼마나 반영하는지 결정.
@@ -315,7 +315,7 @@
 ## Improvment
 - **reversed order Input sequence**
     - input sequence 순서를 바꾸면 dataset의 많은 short term dependencies가 도입되기 때문에 gradient의 전파가 원활해진다.  
-    <img src="./image/seq2seq/reverse order input.png" width="350">   
+        <img src="./image/seq2seq/reverse order input.png" width="350">   
 
         - reverse하여 입력 시킨 sequence를 예를 들었을 때, 이와 같이 “나”라는 단어가 “I”까지 가는 것보다 아래 처럼 reverse 상태에서 가는 것이 gradient 전파가 더 잘 될 것이다.
         - 평균 길이는 같지만, 앞 쪽 데이터에 대한 정확한 예측이 선행된다면, 뒤의 예측도 좋은 결과를 낼 수 있기 때문이다.
@@ -333,17 +333,17 @@
 
 - 실제로 나왔던 결과  
     * 학습 결과  
-    <img src="./image/seq2seq/result1.png" width="600">   
+        <img src="./image/seq2seq/result1.png" width="600">    
 
         - reverse - beam size 12 : BLEU **34.81**
         - baseline system : BLEU **33.30**
         - forward - beam size 12 : BLEU **26.17**
 
     * 실제 추론  
-    <img src="./image/seq2seq/result2.png" width="600">   
+        <img src="./image/seq2seq/result2.png" width="600">   
 
     * 해석  
-    <img src="./image/seq2seq/result3.png" width="600">   
+        <img src="./image/seq2seq/result3.png" width="600">   
 
 ### Seq2Seq paper 논문의 효과
 - 기계 번역 분야가 많은 성장을 할 수 있었음.
