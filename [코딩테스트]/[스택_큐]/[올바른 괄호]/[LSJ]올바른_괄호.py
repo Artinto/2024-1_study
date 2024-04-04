@@ -1,5 +1,4 @@
 def solution(s):
-    answer = True
     dic = {'(':1,')':-1} # 문자 별 값 설정
     total = 0
     s_list = list(s)
