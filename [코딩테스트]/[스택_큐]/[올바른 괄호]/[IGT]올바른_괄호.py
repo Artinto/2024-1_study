@@ -1,13 +1,7 @@
 def solution(s):
     answer = 0
     for i in s:
-        if i == "(":
-            answer += 1
-        else:
-            answer -= 1
+        answer += -1 + 2*(i=='(')
         if answer < 0:
             return False
-    if answer:
-        return False
-    else:
-        return True
+    return False if answer else True
