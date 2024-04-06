@@ -1,17 +1,11 @@
-from collections import deque
 def solution(s):
-    dq = deque()
+    stack = []
     for i in s:
         if i == '(':
-            dq.append('(')
+            stack.append('(')
         else:
-            if len(dq) == 0:
+            if len(stack) == 0:
                 return False
-            elif dq.pop() != '(':
+            elif stack.pop() != '(':
                 return False
-            
-    if len(dq) == 0:
-        answer = True
-    else:
-        answer = False
-    return answer
+    return len(stack) == 0
