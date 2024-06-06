@@ -237,23 +237,23 @@
   * 내부 신경망의 차원 : 3072
 
   1. Embedding Layer
-    * Token Embedding으로 $30522*768 = 23,440,896$
-    * Segmentation Embedding으로 $2*768 = 1,536$
-    * Position Embedding으로 $512*768 = 393,216$
-    * 23,835,648의 Parameter.
+      * Token Embedding으로 $30522*768 = 23,440,896$
+      * Segmentation Embedding으로 $2*768 = 1,536$
+      * Position Embedding으로 $512*768 = 393,216$
+      * 23,835,648의 Parameter.
 
   2. Transformer Layer
-    * query, key, value matrix : $3*768*768 =1,769,472$
-    * output maxtrix : $768*768 = 589,824$
-    * Feed-forward 1 : $768*3072 = 2,359,296$
-    * Feed-forward 2 : $3072*768 = 2,359,296$
-    * 위의 layer가 총 12개 : $12*7,077,888 = 84,934,656$
+      * query, key, value matrix : $3*768*768 =1,769,472$
+      * output maxtrix : $768*768 = 589,824$
+      * Feed-forward 1 : $768*3072 = 2,359,296$
+      * Feed-forward 2 : $3072*768 = 2,359,296$
+      * 위의 layer가 총 12개 : $12*7,077,888 = 84,934,656$
 
   3. Output Layer(에시로 2Class 분류)
-    * $768 * 768 + 768 * 2(클래스의 개수) = 591,360$
+      * $768 * 768 + 768 * 2(클래스의 개수) = 591,360$
 
   4. 총 파라미터 
-    * $23,835,648 +84,934,656 + 591,360 = 109,361,664$로(약 1.1억)
+      * $23,835,648 +84,934,656 + 591,360 = 109,361,664$로(약 1.1억)
 
 * BERT-large
   * Word_Piece : 30522
