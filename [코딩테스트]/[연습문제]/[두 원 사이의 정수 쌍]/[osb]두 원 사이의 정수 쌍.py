@@ -7,6 +7,7 @@ def count_points_inside_circle(r):
         if max_y **2 == r**2 - x**2: # 작은 원의 경계에 있을 경우
             end_point +=1
     return count + 4*r +1, 4*end_point
+
 def solution(r1, r2):
     answer = 0
     if r1> r2 :
